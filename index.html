@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Tender Box</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/bootstrap.min.css"
+    />
+    <style>
+      a,a:hover{
+        text-decoration: none;
+      }
+      .container {
+        padding: 20px auto;
+      }
+      nav{
+        display: flex;
+        align-items: center;
+        height: 6rem;
+        justify-content: flex-start;
+      }
+      nav .logo{
+        font-size: 25px;
+        color: #42cfdf;
+      }
+      ul{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin-top: 15px;
+        margin-left: 50px;
+      }
+      ul li a{
+        padding: 20px;
+        color: #273855;
+      }
+      ul li a:hover{
+        transform: scale(1.1);
+        color: #42cfdf;
+      }
+      .btn{
+        margin-left: auto;
+        height: 40px;
+        width: 150px;
+      }
+      
+      .btn-success{
+        background-color: #3eb881;
+      }
+      .hero{
+        padding: 50px 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .left{
+        padding: 50px 0px;
+      }
+      .left .btn{
+        align-self: flex-start;
+        margin-top: 10px;
+      }
+
+      .left h2{
+        margin-bottom: 20px;
+      }
+      .right{
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+      }
+      .right img{
+        width: 400px;
+      }
+      .all-in-one{
+          margin-bottom: 50px;
+      }
+      .all-in-one h2{
+        text-align: center;
+      }
+      .all-in-one p{
+        text-align: center;
+        max-width: 700px;
+        margin: 20px auto;
+      }
+      .aio-cards{
+        display: flex;
+      }
+      .aio-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .aio-card img{
+        width: 80px;
+        height: 80px;
+      }
+      .aio-card h3{
+        font-size: 20px;
+        text-align: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Tenderbox</a>
+        <ul>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Find Tenders</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+        <a href="login_org.php" class="btn btn-success">Try It Out</a>
+      </nav>
+      <div class="hero">
+        <div class="left">
+          <h2>The Leading Tender Management Platform for Businesses</h2>
+          <p>Join 4000+ businesses that use Scale to discover tender opportunities, digitally prepare their bids/proposals and manage all their tendering documentation, in one place.</p>
+          <a href="login_org.php" class="btn btn-success">Try It Out</a>
+        </div>
+        <div class="right">
+          <img src="images/scale-process.svg" alt="">
+        </div>
+      </div>
+      <div class="all-in-one">
+        <h2>All-in-One Solution</h2>
+        <p>Scale doesn't just stop at free tender opportunities, we provide you with all the essential tools to digitally prepare and submit your tender responses so you can apply for more tenders and win.</p>
+        <div class="aio-cards">
+          <div class="aio-card">
+            <img src="images/opportunities.svg" alt="">
+            <h3>Scale for Finding Tender Opportunities</h3>
+          </div>
+          <div class="aio-card">
+            <img src="images/preparation.svg" alt="">
+            <h3>Scale for Preparing Tender Proposals</h3>
+          </div>
+          <div class="aio-card">
+            <img src="images/documents.svg" alt="">
+            <h3>Scale for Managing Tender Documents</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

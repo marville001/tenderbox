@@ -1,0 +1,214 @@
+a,
+a:hover {
+  text-decoration: none;
+}
+/* Header */
+nav.nav {
+  height: 4rem;
+  background-color: #009688;
+}
+.navbar-brand {
+  width: 200px;
+  height: 100%;
+  font-size: 25px;
+  background-color: #273855;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff7552;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 250px);
+}
+.nav-bar h5 {
+  color: #fff;
+}
+.logout-btn,
+.logout-btn:hover {
+  background-color: #ff7552;
+  margin-left: auto;
+  padding: 5px 20px;
+  color: #fff;
+}
+/* Sidebar */
+
+section.sidebar {
+  min-width: 200px;
+  background-color: #273855;
+  min-height: 90vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+section.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+section.sidebar a i {
+  margin-right: 5px;
+}
+.bg-gray {
+  background-color: #e2e2e2;
+}
+
+/* 
+====================
+    Dashboard
+====================
+*/
+
+.page-container {
+  padding: 0px 50px;
+  padding-bottom: 50px;
+  background-color: #fafafa;
+  flex: 1;
+}
+.page-title {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #009688;
+}
+.info-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.info-card {
+  background-color: #673ab7;
+  display: flex;
+  align-items: center;
+  height: 140px;
+}
+.info-card .icon {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 100%;
+  margin: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-card .icon i {
+  font-size: 24px;
+  color: #273855;
+}
+.info-card .card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card .card-content h2 {
+  color: #fff;
+}
+.info-card .card-content h5 {
+  color: rgb(204, 204, 204);
+  font-size: 15px;
+}
+.info-card:nth-of-type(3) {
+  background-color: #e2957e;
+}
+.info-card:nth-of-type(4) {
+  background-color: #65a780;
+}
+.info-card:nth-of-type(2) {
+  background-color: #485a8b;
+}
+
+.all-tenders {
+  color: #42cfdf;
+}
+
+.tenders-title {
+  margin: 30px 0px 20px 0px;
+  display: flex;
+  align-items: center;
+}
+.add-tender-btn,
+.add-tender-btn:hover {
+  background-color: #42cfdf;
+  padding: 5px 25px;
+  margin-left: 50px;
+  color: #fff;
+}
+.status-won {
+  background-color: #42cfdf;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  border-radius: 10px;
+  padding: 5px 0px;
+}
+.status-closed {
+  background-color: #ff7552;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  border-radius: 10px;
+  padding: 5px 0px;
+}
+
+/* 
+=========================
+*/
+.tender-card .tender-name {
+  font-size: 18px;
+}
+.tender-card {
+  border-bottom: 2px solid rgb(187, 187, 187);
+}
+.tender-des,
+.left,
+.right {
+  display: flex;
+  align-items: center;
+}
+.tender-des {
+  padding: 10px 0px;
+  justify-content: space-between;
+}
+
+.left .q {
+  font-size: 13px;
+  background-color: gray;
+  border-left: 2px solid #42cfdf;
+  padding: 2px 5px;
+  color: #fff;
+}
+.left h4, .right h4 {
+  font-size: 15px;
+  margin-left: 10px;
+}
+.right h4{
+    margin-right: 20px;
+}
+.left h4 i,.right h4 i {
+  color: #009688;
+  margin-right: 5px;
+  font-size: 18px;
+}
+.right .when{
+    font-size: 13px;
+}
+.icons i{
+    cursor: pointer;
+}
+.apply-link, .apply-link:hover{
+    color: #fff;
+}
+/* 
+=========================
+*/
+
+@media (max-width: 900px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+}
