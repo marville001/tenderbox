@@ -153,11 +153,11 @@ $submitteddocssize =  mysqli_num_rows($submitteddocs);
 </script> -->
 
 <script>
-    const form = document.querySelector(".approve-form"),
-    approveBtn = form.querySelector("#approveBtn"),
-    rejectBrn = form.querySelector("#rejectBrn"),
-    loading = form.querySelector("#loading"),
-    errorText = form.querySelector(".error-text");
+    const form = document.querySelector(".approve-form");
+    const approveBtn = form.querySelector("#approveBtn");
+    const rejectBrn = form.querySelector("#rejectBrn");
+    const loading = form.querySelector("#loading");
+    const errorText = form.querySelector(".error-text");
 
     form.onsubmit = (e) => {
         e.preventDefault();

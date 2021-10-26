@@ -9,6 +9,7 @@ $result = $conn->query("select * from bid where supplier_id = '$supplier_id'");
 $query = "SELECT t.tendername tendername,t.id tenderid, bd.amount,t.minbudget,t.maxbudget, bd.status, bd.duration, s.name suppliername, s.id supplierid, td.doc tenderdocument, tmd.kra_pin, tmd.coi, tmd.cor, tmd.tcc, tmd.c_act, tmd.ctl FROM tender t INNER JOIN bid_details bd ON t.id = bd.tender_id INNER join supplier s ON bd.supplier_id = s.id INNER join tenderdocs td ON bd.tender_id = td.tender_id and bd.supplier_id= td.supplier_id INNER join tendermdocs tmd ON bd.tender_id = tmd.tender_id and bd.supplier_id= tmd.supplier_id where s.id = '$supplier_id'";
 
 $bids_result =  $conn->query($query) or die($conn->error);
+
 ?>
 
 <main class="d-flex" style="overflow-x: hidden;">
@@ -20,6 +21,7 @@ $bids_result =  $conn->query($query) or die($conn->error);
                 <thead>
                     <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Organisation</th>
                     <th scope="col">Tender Name</th>
                     <th scope="col">Budget of Tender</th>
                     <th scope="col">Tender Document</th>
@@ -33,6 +35,10 @@ $bids_result =  $conn->query($query) or die($conn->error);
                     $count = 0;
                     while($row = mysqli_fetch_assoc($bids_result)):
                         $tender_id = $row['tenderid'];
+                        $org_res = $conn->query("SELECT o.name org_name from tender t INNER join organisation o on t.org_id = o.id") or die($conn->error);
+
+                        $org_name = mysqli_fetch_assoc($org_res)['org_name'];
+
                         // $tenderresult = $conn->query("select * from tender where id = '$tender_id'");
                         // $tenderrow = mysqli_fetch_assoc($tenderresult);
 
@@ -44,6 +50,7 @@ $bids_result =  $conn->query($query) or die($conn->error);
                         ?>
                         <tr>
                             <th scope="row"><?php echo $count ?></th>
+                            <td><?php echo substr($org_name, 0,15)."..."; ?></td>
                             <td><?php echo $row['tendername'] ?></td>
                             <td><?php echo $row['minbudget']. " - ".$row['maxbudget']  ?></td>
                             <td><?php echo $row['tenderdocument'] ?></td>
