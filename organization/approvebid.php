@@ -77,27 +77,27 @@ $submitteddocssize =  mysqli_num_rows($submitteddocs);
                             <h3>Mandatory Documents</h3>
                             <div class="card-header my-2">
                                 <h5 style="text-transform: capitalize;">KRA CERTIFICATE (PIN)</h5>
-                                <a href="../uploads/<?php echo $bid['kra_pin'] ?>"><?php echo $bid['kra_pin'] ?></a>
+                                <a href="../uploads/<?php echo $bid['kra_pin']; ?>"><?php echo $bid['kra_pin']; ?></a>
                             </div>
                             <div class="card-header my-2">
                                 <h5 style="text-transform: capitalize;">Certificate Of Incorporation</h5>
-                                <a href="../uploads/<?php echo $bid['coi'] ?>"><?php echo $bid['coi'] ?></a>
+                                <a href="../uploads/<?php echo $bid['coi']; ?>"><?php echo $bid['coi']; ?></a>
                             </div>
                             <div class="card-header my-2">
                                 <h5 style="text-transform: capitalize;">Certificate Of Registration</h5>
-                                <a href="../uploads/<?php echo $bid['cor'] ?>"><?php echo $bid['cor'] ?></a>
+                                <a href="../uploads/<?php echo $bid['cor']; ?>"><?php echo $bid['cor']; ?></a>
                             </div>
                             <div class="card-header my-2">
                                 <h5 style="text-transform: capitalize;">Tax Compliance Certificate</h5>
-                                <a href="../uploads/<?php echo $bid['tcc'] ?>"><?php echo $bid['tcc'] ?></a>
+                                <a href="../uploads/<?php echo $bid['tcc']; ?>"><?php echo $bid['tcc']; ?></a>
                             </div>
                             <div class="card-header my-2">
                                 <h5 style="text-transform: capitalize;">Companies Act</h5>
-                                <a href="../uploads/<?php echo $bid['c_act'] ?>"><?php echo $bid['c_act'] ?></a>
+                                <a href="../uploads/<?php echo $bid['c_act']; ?>"><?php echo $bid['c_act']; ?></a>
                             </div>
                             <div class="card-header my-2">
                                 <h5 style="text-transform: capitalize;">Current Trade License</h5>
-                                <a href="../uploads/<?php echo $bid['ctl'] ?>"><?php echo $bid['ctl'] ?></a>
+                                <a href="../uploads/<?php echo $bid['ctl']; ?>"><?php echo $bid['ctl']; ?></a>
                             </div>
                         </div>
                         <div class="col-6">
@@ -113,8 +113,8 @@ $submitteddocssize =  mysqli_num_rows($submitteddocs);
                                     $d_name = strtolower(implode(" ",$n_array));
                                     ?>
                                         <div class="card-header my-2">
-                                            <h5 style="text-transform: capitalize;"><?php echo $d_name ?></h5>
-                                            <a href="../uploads/<?php echo $bid[$row['name']] ?>"><?php echo $bid[$row['name']] ?></a>
+                                            <h5 style="text-transform: capitalize;"><?php echo $d_name; ?></h5>
+                                            <a href="../uploads/<?php echo $bid[$row['name']] ?>"><?php echo $bid[$row['name']]; ?></a>
                                         </div>
                                     <?php
                                 }
@@ -128,35 +128,11 @@ $submitteddocssize =  mysqli_num_rows($submitteddocs);
         </div>
     </section>
 </main>
-
-<!-- <script>
-    console.log("heey...........");
-    const form = document.querySelector(".approve-form"),
-    approveBtn = form.querySelector("#approveBtn"),
-    rejectBrn = form.querySelector("#rejectBrn"),
-    loading = form.querySelector("#loading"),
-    errorText = form.querySelector(".error-text");
-
-    form.onsubmit = (e) => {
-        e.preventDefault();
-    };
-
-    loading.style.display= "none";
-    approveBtn.addEventListener('click', ()=>{
-        let searchQuery = location.search;
-        loading.style.display= "block";
-        let xhr = new XMLHttpRequest();
-        
-        
-    })
-    
-</script> -->
-
 <script>
     const form = document.querySelector(".approve-form");
     const approveBtn = form.querySelector("#approveBtn");
     const rejectBrn = form.querySelector("#rejectBrn");
-    const loading = form.querySelector("#loading");
+    const loading = document.querySelector("#loading");
     const errorText = form.querySelector(".error-text");
 
     form.onsubmit = (e) => {
