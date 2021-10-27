@@ -13,8 +13,8 @@ $supemail = $_GET['supemail'];
 
 $to = $supemail;
 $subject = 'Tender Application Approved';
-$from = 'martinmwangi1904@outlook.com';
-$pass = 'outlook@1904???';
+$from = 'sylvesterkamau897@outlook.com';
+$pass = 'Sylv3st3r!';
 
 $mail = new PHPMailer(true);
 

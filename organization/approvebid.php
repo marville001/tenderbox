@@ -72,67 +72,6 @@ $submitteddocssize =  mysqli_num_rows($submitteddocs);
                          <?php } ?>
             </div>
         </div>
-        <div class="row my-2">
-            <div class="card mr-3">
-                <div class="card-header">
-                    <h2>Documents</h2>
-                </div>
-
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <h3>Mandatory Documents</h3>
-                            <div class="card-header my-2">
-                                <h5 style="text-transform: capitalize;">KRA CERTIFICATE (PIN)</h5>
-                                <a href="../uploads/<?php echo $bid['kra_pin']; ?>"><?php echo $bid['kra_pin']; ?></a>
-                            </div>
-                            <div class="card-header my-2">
-                                <h5 style="text-transform: capitalize;">Certificate Of Incorporation</h5>
-                                <a href="../uploads/<?php echo $bid['coi']; ?>"><?php echo $bid['coi']; ?></a>
-                            </div>
-                            <div class="card-header my-2">
-                                <h5 style="text-transform: capitalize;">Certificate Of Registration</h5>
-                                <a href="../uploads/<?php echo $bid['cor']; ?>"><?php echo $bid['cor']; ?></a>
-                            </div>
-                            <div class="card-header my-2">
-                                <h5 style="text-transform: capitalize;">Tax Compliance Certificate</h5>
-                                <a href="../uploads/<?php echo $bid['tcc']; ?>"><?php echo $bid['tcc']; ?></a>
-                            </div>
-                            <div class="card-header my-2">
-                                <h5 style="text-transform: capitalize;">Companies Act</h5>
-                                <a href="../uploads/<?php echo $bid['c_act']; ?>"><?php echo $bid['c_act']; ?></a>
-                            </div>
-                            <div class="card-header my-2">
-                                <h5 style="text-transform: capitalize;">Current Trade License</h5>
-                                <a href="../uploads/<?php echo $bid['ctl']; ?>"><?php echo $bid['ctl']; ?></a>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <h3>Other Documents</h3>
-                            <?php
-                            if($submitteddocssize <= 0 ){
-                                ?>
-                                    <h4 class="text-center">No other document was required</h4>
-                                <?php
-                            }else{
-                                while($row=mysqli_fetch_assoc($submitteddocs)){
-                                    $n_array =  explode("_",$row['name']);
-                                    $d_name = strtolower(implode(" ",$n_array));
-                                    ?>
-                                        <div class="card-header my-2">
-                                            <h5 style="text-transform: capitalize;"><?php echo $d_name; ?></h5>
-                                            <a href="../uploads/<?php echo $bid[$row['name']] ?>"><?php echo $bid[$row['name']]; ?></a>
-                                        </div>
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
     </section>
 </main>
 
