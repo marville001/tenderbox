@@ -35,7 +35,7 @@ $bids_result =  $conn->query($query) or die($conn->error);
                     $count = 0;
                     while($row = mysqli_fetch_assoc($bids_result)):
                         $tender_id = $row['tenderid'];
-                        $org_res = $conn->query("SELECT o.name org_name from tender t INNER join organisation o on t.org_id = o.id") or die($conn->error);
+                        $org_res = $conn->query("SELECT o.name org_name from tender t INNER join organisation o on t.org_id = o.id where t.id = '$tender_id' ") or die($conn->error);
 
                         $org_name = mysqli_fetch_assoc($org_res)['org_name'];
 
@@ -53,7 +53,7 @@ $bids_result =  $conn->query($query) or die($conn->error);
                             <td><?php echo substr($org_name, 0,15)."..."; ?></td>
                             <td><?php echo $row['tendername'] ?></td>
                             <td><?php echo $row['minbudget']. " - ".$row['maxbudget']  ?></td>
-                            <td><?php echo $row['tenderdocument'] ?></td>
+                            <td><?php echo substr($row['tenderdocument'], -1,15)."..."; ?></td>
                             <td><?php echo $row['amount'] ?></td>
                             <td><?php echo $row['duration'] ?></td>
                             <td>

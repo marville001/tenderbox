@@ -152,33 +152,25 @@ function getBid()
             $bid["documentmarks"] = $marks;
         }
     }
+    $fscorepercentage = 0;
+    $tscorepercentage = 0;
+    
+    if($bid['amount']< $bid['minbudget'] || $bid['amount']> $bid['maxbudget']){
         $fscorepercentage = 0;
-        $tscorepercentage = 0;
-        
-        if($bid['amount']< $bid['minbudget'] || $bid['amount']> $bid['maxbudget']){
-            $fscorepercentage = 0;
-        }else{
-            $fscorepercentage = ($bid['minbudget']/$bid['amount'] + $bid['amount']/$bid['maxbudget'])/2;
-            $fscorepercentage = number_format((float) $fscorepercentage, 4) * 100;
-        }
-        
-        $tscorepercentage = $totaldocmarks > 0 ?($bid['documentmarks']/$totaldocmarks) : 0;
-        $tscorepercentage = number_format((float) $tscorepercentage, 4) * 100;
-        $score = 0;
-        if($tscorepercentage > 75){
-            $score = ($fscorepercentage * 20+ $tscorepercentage * 80)/100;
-            $bid['score'] = $score;
-        }
+    }else{
+        $fscorepercentage = ($bid['minbudget']/$bid['amount'] + $bid['amount']/$bid['maxbudget'])/2;
+        $fscorepercentage = number_format((float) $fscorepercentage, 4) * 100;
+    }
+    
+    $tscorepercentage = $totaldocmarks > 0 ?($bid['documentmarks']/$totaldocmarks) : 0;
+    $tscorepercentage = number_format((float) $tscorepercentage, 4) * 100;
+    $score = 0;
+    if($tscorepercentage > 75){
+        $score = ($fscorepercentage * 20+ $tscorepercentage * 80)/100;
+        $bid['score'] = $score;
+    }
     return $bid;
 }
-
-
-
-
-
-
-
-
 
 
 

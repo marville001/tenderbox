@@ -16,7 +16,7 @@ $row= mysqli_fetch_assoc($bidsres);
 $bid = getBid();
 $submitteddocs = $conn->query("SELECT * FROM otherdocs where tender_id = $tender_id and supplier_id=$supplier_id ");
 $submitteddocssize =  mysqli_num_rows($submitteddocs);
-
+        
 ?>
 
 <main class="d-flex">
@@ -24,7 +24,7 @@ $submitteddocssize =  mysqli_num_rows($submitteddocs);
     <section class="page-container">
         <h3 class="page-title">Approve Bid</h3>
         <div class="row">
-            <div class="col col-4 card p-3 px-2">
+            <div class="col col-12 col-md-4 my-2 card p-3 px-2">
                 <h4>Bid Condition</h4>
                 <hr>
                 <h5>Amount : <?php echo $row['amount'] ?></h5>
@@ -50,14 +50,6 @@ $submitteddocssize =  mysqli_num_rows($submitteddocs);
                 <?php 
                     if($row['status']=='open'){?>
                         <form method="post" class="approve-form">
-                            <!-- <div class="form-group">
-                                <label for="" class="py-2">Email address</label>
-                                <input type="text" class="form-control" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label  class="py-2">Message</label>
-                                <textarea class="form-control p-2" rows="5" placeholder="Password"></textarea>
-                            </div> -->
                             <div id="loading" class="spinner-border" role="status">
                                 <span class="sr-only">Loading...</span>
                             </div>
@@ -72,6 +64,7 @@ $submitteddocssize =  mysqli_num_rows($submitteddocs);
                          <?php } ?>
             </div>
         </div>
+
         <div class="row my-2">
             <div class="card mr-3">
                 <div class="card-header">
@@ -135,17 +128,17 @@ $submitteddocssize =  mysqli_num_rows($submitteddocs);
         </div>
     </section>
 </main>
-
 <script>
-    const form = document.querySelector(".approve-form"),
-    approveBtn = form.querySelector("#approveBtn"),
-    rejectBrn = form.querySelector("#rejectBrn"),
-    loading = form.querySelector("#loading"),
-    errorText = form.querySelector(".error-text");
+    const form = document.querySelector(".approve-form");
+    const approveBtn = form.querySelector("#approveBtn");
+    const rejectBrn = form.querySelector("#rejectBrn");
+    const loading = document.querySelector("#loading");
+    const errorText = form.querySelector(".error-text");
 
     form.onsubmit = (e) => {
-    e.preventDefault();
+        e.preventDefault();
     };
+
     loading.style.display= "none";
 
     approveBtn.onclick = () => {
